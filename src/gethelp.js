@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander';
+import getFullPath from '../src/fullpath.js';
 
 export default () => {
   const program = new Command();
@@ -16,8 +17,10 @@ export default () => {
     .arguments('<filepath2>')
     .helpOption('-h, --help', 'output usage information')
     .option('-f, --format [type]', 'output format ', 'stylish')
-    .action((options) => {
-      console.log('Its work');
+    .action((path1, path2, options) => {
+      const filepath1 = getFullPath(path1);
+      const filepath2 = getFullPath(path2);
+      console.log(`${filepath1}\n${filepath2}`);
     });
 
   program.parse();
