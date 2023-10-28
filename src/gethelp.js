@@ -12,7 +12,8 @@ export default () => {
 
   program
     .description('Compares two configuration files and shows a difference.')
-    //.arguments(type)
+    .arguments('<filepath1>')
+    .arguments('<filepath2>')
     .helpOption('-h, --help', 'output usage information')
     .option('-f, --format <type>', 'output format ')
     .action((options) => {
