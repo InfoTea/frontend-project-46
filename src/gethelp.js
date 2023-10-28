@@ -15,7 +15,7 @@ export default () => {
     .arguments('<filepath1>')
     .arguments('<filepath2>')
     .helpOption('-h, --help', 'output usage information')
-    .option('-f, --format <type>', 'output format ')
+    .option('-f, --format [type]', 'output format ', 'stylish')
     .action((options) => {
       console.log('Its work');
     });
